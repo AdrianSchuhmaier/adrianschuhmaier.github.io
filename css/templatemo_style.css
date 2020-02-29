@@ -330,13 +330,27 @@ h2.welcome-title {
     color: #fff;
 }
 
-.project-item:hover .overlay {
-    opacity: 1;
-    -moz-transform: rotate(0);
-    -ms-transform: rotate(0);
-    -o-transform: rotate(0);
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
+@media (hover: hover) {
+    .project-item:hover .overlay {
+        opacity: 1;
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+
+@media (hover: none) {
+    .project-item .overlay {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+        opacity: 1;
+    }
 }
 
 .project-item.one {
