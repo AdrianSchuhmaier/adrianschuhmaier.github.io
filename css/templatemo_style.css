@@ -258,8 +258,12 @@ h2.welcome-title {
 }
 
 .list-icons.black li i {
-    font-size: 36px;
+    font-size: 45px;
     color: #000;
+}
+
+.list-icons li i:hover {
+    color: rgba(77, 128, 224, 1.0);
 }
 
 .home-projects {
