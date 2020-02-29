@@ -124,6 +124,7 @@ a.toggle-nav:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: 700;
+    margin-right: 36px;
     color: #fff;
     text-transform: uppercase;
 }
@@ -146,15 +147,13 @@ nav.main-navigation {
     }
 }
 
-@media screen and (min-width: 993px) {
-    .container {
-        padding-right: 40px;
-        padding-left: 40px;
-        margin-bottom: 40px;
-    }
+.container {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 40px;
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (min-width: 993px) {
     .container {
         padding-right: 40px;
         padding-left: 40px;
@@ -255,7 +254,7 @@ h2.welcome-title {
 }
 
 .list-icons.black {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .list-icons.black li i {
