@@ -33,6 +33,9 @@ jQuery(document).ready(function($) {
 				case "#3":
 					$("#menu-container .project-3").slideDown('slow');
 					break;
+				case "#4":
+					$("#menu-container .project-4").slideDown('slow');
+					break;
 			}
 		}$('html, body').animate({ scrollTop: 0}, 'slow');
 	}
@@ -49,6 +52,11 @@ jQuery(document).ready(function($) {
 
 	$(".project-item .project-3").click(function(){
 		window.location.hash = "3";
+		return false;
+	})
+
+	$(".project-item .project-4").click(function(){
+		window.location.hash = "4";
 		return false;
 	})
 

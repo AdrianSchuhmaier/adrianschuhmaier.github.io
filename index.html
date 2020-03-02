@@ -33,50 +33,60 @@ http://www.templatemo.com/preview/templatemo_421_raleway
 	
 	<div id="menu-container">
 		<div id="menu-1" class="homepage home-section container">
-			<div class="home-intro text-center animated fadeInDown">
-				<h2 class="welcome-title">Introduction</h2>
-				<p>Raleway HTML5 template is provided by <span class="blue">template</span><span class="green">mo</span>. Credit goes to <a href="http://unsplash.com">Unsplash</a> for photos. Feel free to modify and use this layout for any personal or commercial website.</p>
-				<ul class="list-icons">
-					<li><a href="https://github.com/Or4kel/"><i class="fa fa-github"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/adrian-schuhmaier/"><i class="fa fa-linkedin"></i></a></li>
-				</ul>
+			<div class="home-intro animated fadeInDown">
+				<!--<h2 class="welcome-title">Introduction</h2>-->
+				<div class="row">
+					<div class="col-md-4 col-md-offset-1">
+						<img src="img/portrait.png" alt="" style="width: 100%; border-radius: 50%;">
+					</div>
+					<div class="col-md-6">
+						<h3 class="intro"><b>Adrian Schuhmaier</b></br>3D Graphics Programmer</br>Stuttgart, Germany</h3>
+						<ul class="list-icons">
+							<li><a href="https://github.com/Or4kel/"><i class="fa fa-github"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/adrian-schuhmaier/"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			
-			<div class="home-intro text-center animated fadeInUp">
+			<div class="text-center animated fadeInUp">
 				<h2 class="welcome-title">Projects</h2>
 			</div>
 			<div class="projects-holder">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 p-1 animated umScaleIn">
+					<div class="col-md-3 col-sm-6 p-1 animated umScaleIn">
 						<div class="project-item">
-							<img src="img/1.jpg" alt="">
+							<img src="img/thumb_robo.png" alt="">
 							<div class="overlay project-1">
-								<h4><a><h2>Robo-Rally</h2></br>Multiplayer board game</br>with robots</a></h4>
+								<h4><a><h2>Robo-Rally</h2></br>3D multiplayer game</br>+ custom engine</a></h4>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 p-2 animated umScaleIn">
+					<div class="col-md-3 col-sm-6 p-2 animated umScaleIn">
 						<div class="project-item">
-							<img src="img/2.jpg" alt="">
+							<img src="img/thumb_rendering.png" alt="">
 							<div class="overlay project-2">
 								<h4><a><h2>Rendering Contest</h2></br>Graphics Demo</a></h4>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 p-3 animated umScaleIn">
+					<div class="col-md-3 col-sm-6 p-3 animated umScaleIn">
 						<div class="project-item">
-							<img src="img/3.jpg" alt="">
+							<img src="img/1.jpg" alt="">
 							<div class="overlay project-3">
 								<h4><a><h2>Point Clouds</h2></br>Blender Add-on</a></h4>
 							</div>
 						</div>
 					</div>
-					<!--<div class="col-md-4 col-sm-6 p-4 animated umScaleIn">
+					<div class="col-md-3 col-sm-6 p-4 animated umScaleIn">
 						<div class="project-item">
-							<img src="img/4.jpg" alt="">
+							<img src="img/thumb_chat.png" alt="">
+							<div class="overlay project-4">
+								<h4><a><h2>Android Chat</h2></br>Experiments</a></h4>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 p-5 animated umScaleIn">
+					<!--<div class="col-md-4 col-sm-6 p-5 animated umScaleIn">
 						<div class="project-item">
 							<img src="img/5.jpg" alt="">
 						</div>
@@ -95,15 +105,17 @@ http://www.templatemo.com/preview/templatemo_421_raleway
 				<div class="col-md-10 col-md-offset-1">
 					<div class="inner-story animated fadeInUp text-center">
 						<h2>Robo-Rally</h2>
-						<h4>University Project (6 students)</h4>
+						<h4 style="text-transform: none;">
+							Java &#183 OpenGL &#183 glsl &#183 Blender</br>
+						</h4>
 						<p><b>Requirements:</b></br>
 							Client application for multiplayer board game in Java/C#</br>
-							Rendering in 2D/3D with framework of choice (JavaFX, Unity, jMonkeyEngine, …)
+							Rendering in 2D/3D with framework of choice (JavaFX, Unity, …)
 						</p></br>
 						<p><b>What I did:</b></br>
-							Develop my own 3D rendering framework with OpenGL (using <a href="https://www.lwjgl.org/">lwjgl</a>)</br>
-							Integrate planar reflections (for the board) into the core rendering</br>
-							Create material system based on material capture
+							Develop my own 3D rendering framework</br>
+							Design the main software architecture</br>
+							Create 3D assets and shaders
 						</p>
 						<ul class="list-icons black">
 							<li><a href="https://github.com/Or4kel/RoboRally-Public"><i class="fa fa-github"></i></a></li>
@@ -114,28 +126,14 @@ http://www.templatemo.com/preview/templatemo_421_raleway
 			</div>
 			<div class="row">
 				<div class="offer-holder">
-					<div class="col-md-5 col-md-offset-1">
+					<div class="col-md-10 col-md-offset-1">
 						<div class="offer-item offer-1 animated fadeInUp">
 							<figure>
-								<img src="img/a1.jpg" alt="">
+								<img src="img/robo.png" alt="">
 							</figure>
 							<div class="offer-content text-center">
 								<h4>Own 3D game/rendering engine</h4>
-								<p>Developed my own 3D rendering engine with OpenGL (using <a href="https://www.lwjgl.org/">lwjgl</a>).
-								</p>
-								<span class="offer-left"><i></i></span>
-								<span class="offer-right"><i></i></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-5">
-						<div class="offer-item offer-2 animated fadeInUp">
-							<figure>
-								<img src="img/a2.jpg" alt="">
-							</figure>
-							<div class="offer-content text-center">
-								<h4>Matcap shading</h4>
-								<p>Sed sagittis nunc vel tellus ultricies auctor. Class aptent taciti sociosqu ad litora torquent per conubia , per inceptos himenaeos. Integer eleifend tellu.</p>
+								<p>It's written in Java/OpenGL (using <a href="https://www.lwjgl.org/">lwjgl</a>) and designed specifically for this project.</br>Planar reflections (for the board) are integrated into the core rendering.</br>Materials are light-weight, based on material capture.</br>Multiple other effects are used (e.g. parallax-mapping, sharpening).</p>
 								<span class="offer-left"><i></i></span>
 								<span class="offer-right"><i></i></span>
 							</div>
@@ -150,9 +148,11 @@ http://www.templatemo.com/preview/templatemo_421_raleway
 				<div class="col-md-10 col-md-offset-1">
 					<div class="inner-story animated fadeInUp text-center">
 						<h2>Rendering Contest</h2>
-						<h4>University Project (2 students)</h4>
+						<h4 style="text-transform: none;">
+							C++ &#183 OpenGL &#183 glsl &#183 Blender</br>
+						</h4>
 						<p><b>Requirements:</b></br>
-							Graphics demo implementing various rendering techniques
+							Graphics demo implementing various rendering techniques with OpenGL/glsl
 						</p></br>
 						<p><b>What I did:</b></br>
 							Implement PBR materials, environment-mapping and shadow-mapping</br>
@@ -182,21 +182,83 @@ http://www.templatemo.com/preview/templatemo_421_raleway
 				<div class="col-md-10 col-md-offset-1">
 					<div class="inner-story animated fadeInUp text-center">
 						<h2>Point Clouds</h2>
-						<h4>University Project (2 students)</h4>
+						<h4 style="text-transform: none;">
+							Blender &#183 Python</br>
+						</h4>
 						<p><b>Requirements:</b></br>
 							Generate point clouds from 3d scene as reference for photogrammetry results
 						</p></br>
 						<p><b>What I did:</b></br>
-							Proposed usage of Blender particle system to generate points</br>
+							Used Blender to generate surface particles</br>
 							Create Blender addon for access to particle data, automation and debugging</br>
-							Adjust render passes for accessing depth information
+							Automatically render scene to access depth information for filtering
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-
+		<div id="menu-p4" class="content project-4 container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="inner-story animated fadeInUp text-center">
+						<h2>Android Chat</h2>
+						<h4 style="text-transform: none;">
+							Android Studio &#183 Kotlin &#183 Google Firebase &#183 Room</br>
+						</h4>
+						<p><b>Requirements:</b></br>
+							Messaging app clone</br>
+							Automatic conversation with predefined replies
+						</p></br>
+						<p><b>What I did:</b></br>
+							Recreate the WhatsApp UI (with emoji integration)</br>
+							Create system for automatic replies stored in custom files</br>
+							Set up local SQL database for automatic messages</br>
+							Set up online NoSQL real-time database
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="offer-holder animated fadeInUp">
+					<div class="col-md-2 col-md-offset-1">
+						<div class="offer-item offer-1 animated fadeInUp">
+							<figure>
+								<img src="img/chat_1.png" alt="">
+							</figure>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="offer-item offer-2 animated fadeInUp">
+							<figure>
+								<img src="img/chat_2.png" alt="">
+							</figure>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="offer-item offer-3 animated fadeInUp">
+							<figure>
+								<img src="img/chat_3.png" alt="">
+							</figure>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="offer-item offer-4 animated fadeInUp">
+							<figure>
+								<img src="img/chat_4.png" alt="">
+							</figure>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="offer-item offer-5 animated fadeInUp">
+							<figure>
+								<img src="img/chat_5.png" alt="">
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 
