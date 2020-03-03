@@ -220,6 +220,12 @@ ul.main-menu li a.active {
     animation-delay: 0.5s;
 }
 
+.portrait {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+}
+
 h2.welcome-title {
     font-weight: 100;
     color: #fff;
