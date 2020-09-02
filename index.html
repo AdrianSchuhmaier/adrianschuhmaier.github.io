@@ -2,307 +2,54 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+	<meta name="viewport" content="width=720">
 	<title>Adrian Schuhmaier</title>
-<!--
-Raleway Template 
-http://www.templatemo.com/preview/templatemo_421_raleway
--->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/simple-line-icons.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/templatemo_style.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-	<header class="site-header container animated fadeInDown">
-		<div class="header-wrapper">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="site-branding">
-						<h1>Adrian Schuhmaier</h1>
-					</div>
-				</div>
-				<a href="#" id="back" class="hidden">
-					<i class="fa fa-arrow-left"></i>
-				</a>
-			</div>
-		</div>
-	</header>
 
+
+<body onload="InitWebGL();" onresize="ResizeWebGL();">
+
+	<canvas id="background"></canvas>
 	
-	<div id="menu-container">
-		<div id="menu-1" class="homepage home-section container">
-			<div class="home-intro animated fadeInDown">
-				<!--<h2 class="welcome-title">Introduction</h2>-->
-				<div class="row">
-					<div class="col-md-4 col-md-offset-1 text-center">
-						<img class="portrait" src="img/portrait.jpg" alt="">
-					</div>
-					<div class="col-md-6">
-						<h3 class="intro"><b>Adrian Schuhmaier</b></br>3D Graphics Programmer</br>Stuttgart, Germany</h3>
-						<ul class="list-icons">
-							<li><a href="https://github.com/Or4kel/"><i class="fa fa-github"></i></a></li>
-							<li><a href="https://www.linkedin.com/in/adrian-schuhmaier/"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-			<div class="text-center animated fadeInUp">
-				<h2 class="welcome-title">Projects</h2>
-			</div>
-			<div class="projects-holder">
-				<div class="row">
-					<div class="col-md-3 col-sm-6 p-1 animated umScaleIn">
-						<div class="project-item">
-							<img src="img/thumb_robo.jpg" alt="">
-							<div class="overlay project-1">
-								<h4><a><h2>Robo-Rally</h2></br>3D multiplayer game</br>+ custom engine</a></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 p-2 animated umScaleIn">
-						<div class="project-item">
-							<img src="img/thumb_rendering.jpg" alt="">
-							<div class="overlay project-2">
-								<h4><a><h2>Rendering Contest</h2></br>Graphics Demo</a></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 p-3 animated umScaleIn">
-						<div class="project-item">
-							<img src="img/blender_1.PNG" alt="">
-							<div class="overlay project-3">
-								<h4><a><h2>Point Clouds</h2></br>Blender Add-on</a></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 p-4 animated umScaleIn">
-						<div class="project-item">
-							<img src="img/thumb_chat.jpg" alt="">
-							<div class="overlay project-4">
-								<h4><a><h2>Android Chat</h2></br>Hobby Projects</a></h4>
-							</div>
-						</div>
-					</div>
-					<!--<div class="col-md-4 col-sm-6 p-5 animated umScaleIn">
-						<div class="project-item">
-							<img src="img/5.jpg" alt="">
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 p-6 animated umScaleIn">
-						<div class="project-item">
-							<img src="img/6.jpg" alt="">
-						</div>
-					</div>-->
-				</div>
-			</div>
+	<div class="container" id="person">
+		<img style="width: 200px; border-radius: 50%" id="portrait" src="img/portrait.jpg" alt="">
+		<div id="person-text">
+			<h2>Adrian Schuhmaier</h2>
+			<p>3D Graphics Programmer</p>
+			<p>Stuttgart, Germany</p>
 		</div>
-
-		<div id="menu-p1" class="content project-1 container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="inner-story animated fadeInUp text-center">
-						<h2>Robo-Rally</h2>
-						<h4 style="text-transform: none;">
-							Java &#183 OpenGL &#183 glsl &#183 Blender</br>
-						</h4>
-						<p><b>Requirements:</b></br>
-							Client application for multiplayer board game in Java/C#</br>
-							Rendering in 2D/3D with framework of choice (JavaFX, Unity, …)
-						</p></br>
-						<p><b>What I did:</b></br>
-							Develop my own 3D rendering framework</br>
-							Design the main software architecture</br>
-							Create 3D assets and shaders
-						</p>
-						<ul class="list-icons black">
-							<li><a href="https://github.com/Or4kel/RoboRally-Public"><i class="fa fa-github"></i></a></li>
-							<li><a href="https://drive.google.com/file/d/1AB1FQNJjr5qHZLB8IZyTRzbrDwro1bjZ/view?usp=sharing"><i class="fa fa-cloud-download"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="offer-holder">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="offer-item offer-1 animated fadeInUp">
-							<figure>
-								<img src="img/robo.png" alt="">
-							</figure>
-							<div class="offer-content text-center">
-								<h4>Own 3D game/rendering engine</h4>
-								<p>It's written in Java/OpenGL (using <a href="https://www.lwjgl.org/">lwjgl</a>) and designed specifically for this project.</br>Planar reflections (for the board) are integrated into the core rendering.</br>Materials are light-weight, based on material capture.</br>Multiple other effects are used (e.g. parallax-mapping, sharpening).</p>
-								<span class="offer-left"><i></i></span>
-								<span class="offer-right"><i></i></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="menu-p2" class="content project-2 container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="inner-story animated fadeInUp text-center">
-						<h2>Rendering Contest</h2>
-						<h4 style="text-transform: none;">
-							C++ &#183 OpenGL &#183 glsl &#183 Blender</br>
-						</h4>
-						<p><b>Requirements:</b></br>
-							Graphics demo implementing various rendering techniques with OpenGL/glsl
-						</p></br>
-						<p><b>What I did:</b></br>
-							Implement PBR materials, environment-mapping and shadow-mapping</br>
-							Create the 3D models used in the scene
-						</p>
-						<ul class="list-icons black">
-							<li><a href="https://drive.google.com/file/d/1oheZKl8L4hNWRvGYb7rIed2mLPf3iGiH/view?usp=sharing"><i class="fa fa-cloud-download"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="offer-holder animated fadeInUp">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="offer-item offer-1 animated fadeInUp">
-							<figure>
-								<img src="img/rendering.jpg" alt="">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="menu-p3" class="content project-3 container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="inner-story animated fadeInUp text-center">
-						<h2>Point Clouds</h2>
-						<h4 style="text-transform: none;">
-							Blender &#183 Python</br>
-						</h4>
-						<p><b>Requirements:</b></br>
-							Generate point clouds from 3d scene as reference for photogrammetry results
-						</p></br>
-						<p><b>What I did:</b></br>
-							Used Blender to generate surface particles</br>
-							Create Blender addon for access to particle data, automation and debugging</br>
-							Automatically render scene to access depth information for filtering
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="offer-holder animated fadeInUp">
-					<div class="col-md-6 col-md-offset-1">
-						<div class="offer-item offer-1 animated fadeInUp">
-							<figure>
-								<img src="img/blender_1.PNG" alt="">
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="offer-item offer-2 animated fadeInUp">
-							<figure>
-								<img src="img/blender_2.PNG" alt="">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="menu-p4" class="content project-4 container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="inner-story animated fadeInUp text-center">
-						<h2>Android Chat</h2>
-						<h4 style="text-transform: none;">
-							Android Studio &#183 Kotlin &#183 Google Firebase &#183 Room</br>
-						</h4>
-						<p><b>Requirements:</b></br>
-							Messaging app clone</br>
-							Automatic conversation with predefined replies
-						</p></br>
-						<p><b>What I did:</b></br>
-							Recreate the WhatsApp UI (with emoji integration)</br>
-							Create system for automatic replies stored in custom files</br>
-							Set up local SQL database for automatic messages</br>
-							Set up online NoSQL real-time database
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="offer-holder animated fadeInUp">
-					<div class="col-md-2 col-sm-4 col-md-offset-1">
-						<div class="offer-item offer-1 animated fadeInUp">
-							<figure>
-								<img src="img/chat_1.png" alt="">
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-4">
-						<div class="offer-item offer-2 animated fadeInUp">
-							<figure>
-								<img src="img/chat_2.png" alt="">
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-4">
-						<div class="offer-item offer-3 animated fadeInUp">
-							<figure>
-								<img src="img/chat_3.png" alt="">
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-4">
-						<div class="offer-item offer-4 animated fadeInUp">
-							<figure>
-								<img src="img/chat_4.png" alt="">
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-4">
-						<div class="offer-item offer-5 animated fadeInUp">
-							<figure>
-								<img src="img/chat_5.png" alt="">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</div>
 
+
+	<div id="divide">
+		<h1>
+			<a href="https://github.com/AdrianSchuhmaier/"><i class="fa fa-github"></i></a>
+			<a href="https://www.linkedin.com/in/adrian-schuhmaier/"><i class="fa fa-linkedin"></i></a>
+		</h1>
+	</div>
+
+	<div class="container" id="projects">
+		<div class="fancyimg" src="img/portrait.jpg">
+			<img src="img/portrait.jpg" width="0" height="0">
+		</div>
+	
+		<div class="fancyimg" src="img/portrait.jpg">
+			<img src="img/portrait.jpg" width="0" height="0">
+		</div>	
+	</div>
 	
 
-
-	<footer class="site-footer container text-center">
-		<!--<div class="row">
-			<div class="col-md-12">
-				<div class="main-footer">
-					<ul class="social">
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">Instagram</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>-->
-		<div class="row">
-			<div class="col-md-12 copyright">
-				<p>&copy; 2020 Adrian Schuhmaier</p>
-			</div>
+	<footer>
+		<div>
+			<p>&copy; 2020 Adrian Schuhmaier</p>
 		</div>
 	</footer>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/templatemo_custom.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>

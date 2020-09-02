@@ -1,0 +1,1 @@
+document.onkeypress = function() {timer.pause();};
