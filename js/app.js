@@ -45,9 +45,9 @@ var fsitem =
 var fsbackground = 
     `precision mediump float;
 
-    uniform float t;
+    uniform float time;
     uniform vec2 dimensions;
-    uniform vec3 lineProps; // left.x, left.y, length
+    uniform float size;
     
     vec2 coordToUV(vec2 coord)
     {
@@ -62,28 +62,61 @@ var fsbackground =
         return length * 2.0 / dimensions.x;
     }
 
-    vec3 hsv2rgb(vec3 c)
+    float N21(vec2 id)
     {
-        vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
-        vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
-        return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+        id = sin(281.2 * id);
+        id += dot(id, id + 23.45);
+        return fract(id.x + id.y);
+    }
+
+    vec2 N22(vec2 id)
+    {
+        float x = N21(id);
+        return vec2(x, N21(id + x));
+    }
+
+    vec2 offset(vec2 id, float t)
+    {
+        return sin(fract(N22(id) * t) * 6.2831);
+    }
+
+    float distToLine(vec2 p, vec2 a, vec2 b)
+    {
+        vec2 pa = p-a;
+        vec2 ba = b-a;
+        float t = clamp(dot(pa, ba)/dot(ba, ba), 0., 1.);
+        return length(pa - ba * t);
+    }
+
+    float line(vec2 p, vec2 a, vec2 b, float thickness)
+    {
+        return smoothstep(thickness, 0., distToLine(p, a, b));
     }
 
     void main()
     {
+        float t = 100. * time;
+
         vec3 background = vec3(.1);
         vec2 uv = coordToUV(gl_FragCoord.xy);
-        vec2 left = coordToUV(lineProps.xy);
 
-        vec2 reflectedUV = vec2(abs(uv.x) -.5, uv.y + left.y);
-        vec2 st = vec2(atan(reflectedUV.y, reflectedUV.x-.15), length(uv));
+        // cell coordinates vec2[-1, 1]
+        vec2 st = fract(uv/lenToUV(size)) *2. -1.;
+        vec2 id = floor(uv/lenToUV(size));
 
-        vec3 up = vec3(0.89, 0.92, 1.0);
-        vec3 down = vec3(0., 0.13, 0.4)*.3;
+        vec2 o = 0.5 * offset(id, 3.*t);
 
-        background += vec3(0.01 / length(uv));
-        gl_FragColor = vec4(mix(down, up, st.x/6.2831 +.5 - .2*st.y), 1.);
-        //gl_FragColor = vec4(uv, .0, 1.);
+        float thickness = 0.05;
+        float acc = 0.;
+        acc += line(st, o, 0.5 * offset(id + vec2(-1., 0.), 3.*t) + 2. * vec2(-1., 0.), thickness);
+        acc += line(st, o, 0.5 * offset(id + vec2(1., 0.), 3.*t)  + 2. * vec2(1., 0.),   thickness);
+        acc += line(st, o, 0.5 * offset(id + vec2(0., -1.), 3.*t) + 2. * vec2(0., -1.), thickness);
+        acc += line(st, o, 0.5 * offset(id + vec2(0., 1.), 3.*t)  + 2. * vec2(0., 1.),   thickness);
+ 
+ 
+        vec3 col = vec3(acc);
+
+        gl_FragColor = vec4(col, 1.);
     }
     `;
 
@@ -144,12 +177,11 @@ var Render = function(time) {
 
 var RenderBackground = function(t) {
     gl.useProgram(background.shaderProgram);
-    gl.uniform1f(background.timeLocation, t);
+    gl.uniform1f(background.timeLocation, t * 0.001);
     gl.uniform2fv(background.dimensionsLocation, new Float32Array(background.dimensions));
 
     var rect = document.getElementById("divide").querySelector("h1").getBoundingClientRect();
-    gl.uniform3fv(background.linePropsLocation, new Float32Array(
-        [rect.left, rect.bottom/2 + rect.top/2, rect.left - rect.right]));
+    gl.uniform1f(background.sizeLocation, 100);
 
     gl.viewport(0, 0, background.dimensions[0], background.dimensions[1]);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
@@ -272,7 +304,7 @@ var InitBackgroundShader = function() {
     gl.bindBuffer(gl.ARRAY_BUFFER, fullscreenVertexBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(fullscreenVertices), gl.STATIC_DRAW);
 
-    background.timeLocation = gl.getUniformLocation(background.shaderProgram, "t");
+    background.timeLocation = gl.getUniformLocation(background.shaderProgram, "time");
     background.dimensionsLocation = gl.getUniformLocation(background.shaderProgram, "dimensions");
-    background.linePropsLocation = gl.getUniformLocation(background.shaderProgram, "lineProps");
+    background.sizeLocation = gl.getUniformLocation(background.shaderProgram, "size");
 }
